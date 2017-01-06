@@ -22,19 +22,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        billField.becomeFirstResponder()
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
         
-        
+        billField.becomeFirstResponder()
         tipPorcentages = defaults.object(forKey: "percentValues") as? [Double] ?? [Double]()
         
         if(tipPorcentages.isEmpty){
             tipPorcentages = [0.18, 0.20, 0.25]
         }
-        
+         
         let tipZero = String(Int(tipPorcentages[0] * 100)) + "%"
         tipControl.setTitle(tipZero, forSegmentAt: 0)
 
